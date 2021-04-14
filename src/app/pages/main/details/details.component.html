@@ -1,0 +1,47 @@
+<div class="details">
+  <div class="details__row">
+    <app-generic-item
+      title="Security check"
+      [descriptionTpl]="validateTpl"
+    ></app-generic-item>
+    <app-detail-text-item
+      title="Photo #"
+      [description]="claim.photos.length.toString()"
+    ></app-detail-text-item>
+  </div>
+  <div class="details__row">
+    <app-detail-text-item
+      title="Date"
+      [description]="claim.date"
+    ></app-detail-text-item>
+    <app-detail-text-item
+      title="Time"
+      [description]="claim.time"
+    ></app-detail-text-item>
+    <app-detail-text-item
+      title="Weather"
+      [description]="claim.weather"
+    ></app-detail-text-item>
+    <app-detail-text-item
+      title="GPS Precision"
+      [description]="claim.gpsPrecision"
+    ></app-detail-text-item>
+  </div>
+</div>
+<ng-template #validateTpl>
+  <div class="validate">
+    <div
+      [class]="
+        'validate__tick-container validate__tick-container--' +
+        (claim.photos[0]?.isValid ? 'green' : 'red')
+      "
+    ></div>
+    <label
+      [class]="
+        'validate__label validate__label--' +
+        (claim.photos[0]?.isValid ? 'green' : 'red')
+      "
+      >{{ claim.photos[0]?.isValid ? "Validated" : "Not Validated" }}</label
+    >
+  </div>
+</ng-template>

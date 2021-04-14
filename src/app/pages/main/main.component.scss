@@ -1,0 +1,22 @@
+.main {
+  margin: 18px 15px 0;
+  &__body {
+    img {
+      height: 480px;
+      width: 100%;
+    }
+  }
+  &__footer {
+    display: flex;
+    height: 120px;
+    &__mini {
+      width: 180px;
+      img {
+        height: 100%;
+      }
+    }
+    app-images-reel {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<div class="reel">
+  <ng-container *ngFor="let image of images">
+    <app-images-reel-item
+      [image]="image"
+      (selectedImage)="selectImage(image.id)"
+    ></app-images-reel-item>
+  </ng-container>
+</div>

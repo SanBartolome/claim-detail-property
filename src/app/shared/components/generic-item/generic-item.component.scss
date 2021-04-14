@@ -1,0 +1,9 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    color: var(--color-dark-grey);
+    font-size: 9px;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,37 @@
+<div class="main">
+  <app-details [claim]="claim"></app-details>
+  <div class="main__body">
+    <ng-container *ngIf="isPhotoSelected; else mapMainSrcTpl">
+      <ng-container *ngIf="!!selectedPhoto">
+        <img [src]="selectedPhoto" />
+      </ng-container>
+    </ng-container>
+  </div>
+  <div class="main__footer">
+    <div class="main__footer__mini" (click)="changeBetweenPhotoAndMap()">
+      <ng-container *ngIf="isPhotoSelected; else imageSubSrcTpl">
+        <app-location-in-map
+          [latitude]="claim.latitude"
+          [longitude]="claim.longitude"
+        ></app-location-in-map>
+      </ng-container>
+    </div>
+    <app-images-reel
+      [images]="claim.photos"
+      (imageSelected)="changeSelectedPhoto($event)"
+    ></app-images-reel>
+  </div>
+</div>
+<ng-template #mapMainSrcTpl>
+  <app-location-in-map
+    [latitude]="claim.latitude"
+    [longitude]="claim.longitude"
+    [height]="625"
+    [width]="925"
+  ></app-location-in-map>
+</ng-template>
+<ng-template #imageSubSrcTpl>
+  <ng-container *ngIf="!!selectedPhoto">
+    <img [src]="selectedPhoto" />
+  </ng-container>
+</ng-template>

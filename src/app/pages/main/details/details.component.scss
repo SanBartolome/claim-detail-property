@@ -1,0 +1,27 @@
+.details {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+}
+
+.validate {
+  display: flex;
+  flex-direction: row;
+  &__tick-container {
+    border-radius: 1px;
+    height: 12px;
+    margin-right: 6px;
+    width: 12px;
+    &--green {
+      background-color: var(--color-green);
+    }
+  }
+  &__label {
+    font-size: 13px;
+    &--green {
+      color: var(--color-green);
+    }
+  }
+}
